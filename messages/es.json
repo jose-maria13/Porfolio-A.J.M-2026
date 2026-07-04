@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Jose Maria Atonur",
+    "description": "Portfolio — Software QA, Cloud Data Engineer y Full Stack Developer"
+  },
+  "nav": {
+    "brand": "JMA",
+    "ariaLabel": "Navegación principal",
+    "inicio": "Inicio",
+    "sobreMi": "Sobre mí",
+    "experiencia": "Experiencia",
+    "proyectos": "Proyectos"
+  },
+  "home": {
+    "heroGreeting": "Hola, soy {name}",
+    "rolesLabel": "ROLES & TECNOLOGIA",
+    "relatedTechnologiesLabel": "Stack relacionado",
+    "ctaViewWork": "Ver mi trabajo"
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "Bio",
+      "title": "Sobre mí",
+      "personalLabel": "Personal"
+    },
+    "experience": {
+      "eyebrow": "Experiencia profesional",
+      "title": "Experiencia",
+      "roleLabel": "Rol actual",
+      "descriptionLabel": "Descripción",
+      "stackLabel": "Stack"
+    },
+    "projects": {
+      "title": "Proyectos"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English"
+  }
+}
