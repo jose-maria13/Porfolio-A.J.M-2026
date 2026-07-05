@@ -31,7 +31,7 @@ export function LocaleSwitcher() {
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={t("label")}
-        className="flex min-w-[7.5rem] items-center justify-between gap-2 rounded-lg border border-zinc-700/90 bg-zinc-900/90 px-3 py-2 text-sm text-zinc-200 shadow-sm backdrop-blur-sm transition-colors hover:border-zinc-600 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#10b981]/50 focus:ring-offset-2 focus:ring-offset-[#0a0a0a]"
+        className="flex min-w-[6.75rem] items-center justify-between gap-2 rounded-full border border-white/[0.08] bg-zinc-950/80 px-3.5 py-2.5 text-sm font-medium text-zinc-200 shadow-sm backdrop-blur-sm transition-colors hover:border-zinc-600 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#10b981]/50 focus:ring-offset-2 focus:ring-offset-[#0a0a0a] sm:min-w-[7.5rem]"
         onClick={() => setOpen((o) => !o)}
       >
         <span>{t(locale as "es" | "en")}</span>

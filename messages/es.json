@@ -4,7 +4,8 @@
     "description": "Portfolio — Software QA, Cloud Data Engineer y Full Stack Developer"
   },
   "nav": {
-    "brand": "JMA",
+    "brand": "Jose Maria Atonur",
+    "brandShort": "Jose M.",
     "ariaLabel": "Navegación principal",
     "inicio": "Inicio",
     "sobreMi": "Sobre mí",
@@ -12,31 +13,50 @@
     "proyectos": "Proyectos"
   },
   "home": {
-    "heroGreeting": "Hola, soy {name}",
-    "rolesLabel": "ROLES & TECNOLOGIA",
-    "relatedTechnologiesLabel": "Stack relacionado",
+    "heroGreetingLine1": "Hola,",
+    "heroGreetingLine2": "soy {name}",
+    "heroSubtitle": "Profesional orientado a bases de datos, análisis funcional y calidad de datos. Experiencia en administración SQL, validación de procesos, automatización QA y proyectos con alto volumen de información.",
+    "rolesLabel": "Perfil orientado al sector",
+    "relatedTechnologiesLabel": "Stack clave",
     "ctaViewWork": "Ver mi trabajo"
   },
   "sections": {
     "about": {
       "eyebrow": "Bio",
       "title": "Sobre mí",
-      "personalLabel": "Personal"
+      "personalLabel": "Personal",
+      "languagesLabel": "Idiomas",
+      "languagesNote": "Comunicación fluida en español. Inglés en nivel intermedio para lectura técnica y contextos laborales. Portugués en etapa inicial de aprendizaje."
     },
     "experience": {
       "eyebrow": "Experiencia profesional",
       "title": "Experiencia",
       "roleLabel": "Rol actual",
+      "projectLabel": "Proyecto",
       "descriptionLabel": "Descripción",
       "stackLabel": "Stack"
     },
     "projects": {
-      "title": "Proyectos"
+      "eyebrow": "Portfolio técnico",
+      "title": "Proyectos",
+      "description": "Selección de proyectos orientados a datos, automatización, calidad y desarrollo de soluciones prácticas.",
+      "highlightsLabel": "Puntos destacados",
+      "stackLabel": "Herramientas utilizadas"
     }
   },
   "localeSwitcher": {
     "label": "Idioma",
     "es": "Español",
     "en": "English"
+  },
+  "contactFloating": {
+    "buttonLabel": "Abrir opciones de contacto",
+    "buttonText": "Contacto",
+    "eyebrow": "Disponible",
+    "title": "Conectemos",
+    "closeLabel": "Cerrar opciones de contacto",
+    "copyLabel": "📋 Copiar",
+    "copiedLabel": "✅ Copiado",
+    "copyEmailLabel": "Copiar dirección de Gmail"
   }
 }

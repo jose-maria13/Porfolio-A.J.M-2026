@@ -13,11 +13,16 @@ export async function AboutSection() {
     description: item.description[locale],
   }));
   const personalParagraphs = portfolio.about.personal[locale];
+  const languages = portfolio.languages.map((language) => ({
+    ...language,
+    name: language.name[locale],
+    level: language.level[locale],
+  }));
 
   return (
     <section
       id="sobre-mi"
-      className="scroll-mt-20 border-t border-zinc-800/60 bg-[#0a0a0a] md:scroll-mt-16"
+      className="scroll-mt-24 border-t border-zinc-800/60 bg-[#0a0a0a] md:scroll-mt-24"
       aria-labelledby="sobre-mi-heading"
     >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
@@ -71,6 +76,39 @@ export async function AboutSection() {
                   {paragraph}
                 </p>
               ))}
+            </div>
+
+            <div className="mt-8 border-t border-white/[0.07] pt-6">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px flex-1 bg-gradient-to-r from-[#10b981]/70 to-transparent" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
+                  {t("languagesLabel")}
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {languages.map((language) => (
+                  <li
+                    key={language.id}
+                    className="rounded-2xl border border-white/[0.06] bg-white/[0.025] px-4 py-3"
+                  >
+                    <div className="mb-2 flex items-center justify-between gap-3">
+                      <span className="text-sm font-medium text-zinc-200">
+                        {language.name}
+                      </span>
+                      <span className="text-xs text-zinc-500">{language.level}</span>
+                    </div>
+                    <div className="h-1.5 overflow-hidden rounded-full bg-zinc-800">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-[#10b981]/80 to-[#10b981]"
+                        style={{ width: `${language.proficiency}%` }}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs leading-6 text-zinc-500">
+                {t("languagesNote")}
+              </p>
             </div>
           </div>
         </div>

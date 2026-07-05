@@ -12,7 +12,9 @@ import { DataPipelineBackground } from "@/components/background/DataPipelineBack
 import type { RoleTechnology, TechAccent } from "@/content/types";
 
 type HeroSectionProps = {
-  greeting: string;
+  greetingLine1: string;
+  greetingLine2: string;
+  heroSubtitle: string;
   roles: RoleView[];
   relatedTechnologiesLabel: string;
   rolesLabel: string;
@@ -157,7 +159,9 @@ function RoleCard({
 }
 
 export function HeroSection({
-  greeting,
+  greetingLine1,
+  greetingLine2,
+  heroSubtitle,
   roles,
   relatedTechnologiesLabel,
   rolesLabel,
@@ -166,7 +170,7 @@ export function HeroSection({
   return (
     <section
       id="inicio"
-      className="relative w-full min-h-screen scroll-mt-16 md:scroll-mt-16"
+      className="relative w-full min-h-screen scroll-mt-24 md:scroll-mt-24"
     >
       <motion.div
         className="pointer-events-none absolute inset-0 -z-10 min-h-screen"
@@ -181,7 +185,7 @@ export function HeroSection({
         />
       </motion.div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-5 pb-16 pt-28 sm:px-8 lg:pb-24 lg:pt-24">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-7xl flex-col justify-center px-5 pb-16 pt-32 sm:px-8 lg:pb-24 lg:pt-28">
         <motion.div
           className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20"
           variants={staggerContainer}
@@ -193,9 +197,17 @@ export function HeroSection({
             variants={staggerItem}
           >
             <div className="space-y-5">
-              <h1 className="text-balance text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl lg:text-[2.75rem] xl:text-6xl">
-                {greeting}
-              </h1>
+              <div className="space-y-3">
+                <h1 className="text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl lg:text-[2.75rem] xl:text-6xl">
+                  <span className="block text-zinc-400">{greetingLine1}</span>
+                  <span className="mt-1 block whitespace-nowrap text-[clamp(1.35rem,4.2vw,3.75rem)] text-zinc-50">
+                    {greetingLine2}
+                  </span>
+                </h1>
+                <p className="max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+                  {heroSubtitle}
+                </p>
+              </div>
               <div className="space-y-2">
                 <h2 className="text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
                   {rolesLabel}

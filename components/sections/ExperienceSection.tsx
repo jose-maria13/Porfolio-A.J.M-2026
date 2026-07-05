@@ -16,7 +16,7 @@ export async function ExperienceSection() {
   return (
     <section
       id="experiencia"
-      className="scroll-mt-20 border-t border-zinc-800/60 bg-[#0a0a0a] md:scroll-mt-16"
+      className="scroll-mt-24 border-t border-zinc-800/60 bg-[#0a0a0a] md:scroll-mt-24"
       aria-labelledby="experiencia-heading"
     >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
@@ -45,7 +45,7 @@ export async function ExperienceSection() {
                 <div>
                   <div className="mb-5 flex flex-wrap items-center gap-3">
                     <span className="rounded-full border border-[#10b981]/30 bg-[#10b981]/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-100">
-                      {t("roleLabel")}
+                      {experience.statusLabel?.[locale] ?? t("roleLabel")}
                     </span>
                     <span className="text-sm text-zinc-500">
                       {experience.duration}
@@ -55,6 +55,20 @@ export async function ExperienceSection() {
                   <h3 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
                     {experience.title}
                   </h3>
+
+                  {experience.url ? (
+                    <a
+                      href={experience.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#10b981] transition hover:text-emerald-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+                    >
+                      {experience.hideUrlPrefix
+                        ? experience.urlLabel ?? experience.url
+                        : `${t("projectLabel")}: ${experience.urlLabel ?? experience.url}`}
+                      <span aria-hidden>↗</span>
+                    </a>
+                  ) : null}
 
                   <div className="mt-6 rounded-2xl border border-white/[0.06] bg-black/20 p-5">
                     <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">

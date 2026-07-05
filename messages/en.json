@@ -4,7 +4,8 @@
     "description": "Portfolio — Software QA, Cloud Data Engineer and Full Stack Developer"
   },
   "nav": {
-    "brand": "JMA",
+    "brand": "Jose Maria Atonur",
+    "brandShort": "Jose M.",
     "ariaLabel": "Main navigation",
     "inicio": "Home",
     "sobreMi": "About",
@@ -12,31 +13,50 @@
     "proyectos": "Projects"
   },
   "home": {
-    "heroGreeting": "Hi, I'm {name}",
-    "rolesLabel": "ROLES & TECNOLOGIA",
-    "relatedTechnologiesLabel": "Related stack",
+    "heroGreetingLine1": "Hi,",
+    "heroGreetingLine2": "I'm {name}",
+    "heroSubtitle": "Professional focused on databases, functional analysis, and data quality. Experienced in SQL administration, process validation, QA automation, and high-volume data projects.",
+    "rolesLabel": "Industry-focused profile",
+    "relatedTechnologiesLabel": "Key stack",
     "ctaViewWork": "See my work"
   },
   "sections": {
     "about": {
       "eyebrow": "Bio",
       "title": "About me",
-      "personalLabel": "Personal"
+      "personalLabel": "Personal",
+      "languagesLabel": "Languages",
+      "languagesNote": "Fluent communication in Spanish. Intermediate English for technical reading and work contexts. Portuguese at an early learning stage."
     },
     "experience": {
       "eyebrow": "Professional experience",
       "title": "Experience",
       "roleLabel": "Current role",
+      "projectLabel": "Project",
       "descriptionLabel": "Description",
       "stackLabel": "Stack"
     },
     "projects": {
-      "title": "Projects"
+      "eyebrow": "Technical portfolio",
+      "title": "Projects",
+      "description": "Selected projects focused on data, automation, quality, and practical solution development.",
+      "highlightsLabel": "Key highlights",
+      "stackLabel": "Tools used"
     }
   },
   "localeSwitcher": {
     "label": "Language",
     "es": "Español",
     "en": "English"
+  },
+  "contactFloating": {
+    "buttonLabel": "Open contact options",
+    "buttonText": "Contact",
+    "eyebrow": "Available",
+    "title": "Let's connect",
+    "closeLabel": "Close contact options",
+    "copyLabel": "📋 Copy",
+    "copiedLabel": "✅ Copied",
+    "copyEmailLabel": "Copy Gmail address"
   }
 }
