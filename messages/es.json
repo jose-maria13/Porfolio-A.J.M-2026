@@ -18,7 +18,8 @@
     "heroSubtitle": "Profesional orientado a bases de datos, análisis funcional y calidad de datos. Experiencia en administración SQL, validación de procesos, automatización QA y proyectos con alto volumen de información.",
     "rolesLabel": "Perfil orientado al sector",
     "relatedTechnologiesLabel": "Stack clave",
-    "ctaViewWork": "Ver mi trabajo"
+    "ctaViewWork": "Ver mi trabajo",
+    "ctaViewCv": "Ver / descargar CV"
   },
   "sections": {
     "about": {

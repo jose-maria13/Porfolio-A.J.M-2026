@@ -18,7 +18,8 @@
     "heroSubtitle": "Professional focused on databases, functional analysis, and data quality. Experienced in SQL administration, process validation, QA automation, and high-volume data projects.",
     "rolesLabel": "Industry-focused profile",
     "relatedTechnologiesLabel": "Key stack",
-    "ctaViewWork": "See my work"
+    "ctaViewWork": "See my work",
+    "ctaViewCv": "View / download CV"
   },
   "sections": {
     "about": {

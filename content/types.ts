@@ -57,7 +57,7 @@ export type ProjectItem = {
 };
 
 export type ContactLink = {
-  id: "gmail" | "linkedin" | "github";
+  id: "gmail" | "linkedin" | "github" | "cv";
   label: string;
   value: string;
   href: string;

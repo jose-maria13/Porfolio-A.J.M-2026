@@ -19,6 +19,7 @@ type HeroSectionProps = {
   relatedTechnologiesLabel: string;
   rolesLabel: string;
   ctaLabel: string;
+  cvLabel: string;
 };
 
 type RoleView = {
@@ -166,6 +167,7 @@ export function HeroSection({
   relatedTechnologiesLabel,
   rolesLabel,
   ctaLabel,
+  cvLabel,
 }: HeroSectionProps) {
   return (
     <section
@@ -224,12 +226,20 @@ export function HeroSection({
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-wrap gap-3">
               <a
                 href="#proyectos"
                 className="inline-flex items-center justify-center rounded-lg bg-zinc-100 px-6 py-3 text-sm font-medium text-zinc-950 shadow-sm transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
               >
                 {ctaLabel}
+              </a>
+              <a
+                href="/cv-jose-maria-atonur.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg border border-[#10b981]/35 bg-[#10b981]/[0.08] px-6 py-3 text-sm font-medium text-emerald-100 transition hover:border-[#10b981]/75 hover:bg-[#10b981]/15 hover:shadow-[0_0_22px_rgba(16,185,129,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+              >
+                {cvLabel}
               </a>
             </div>
           </motion.div>
@@ -238,14 +248,15 @@ export function HeroSection({
             className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none"
             variants={staggerItem}
           >
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-2xl bg-zinc-900/40 ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_25px_80px_-20px_rgba(0,0,0,0.65),0_0_100px_-30px_rgba(16,185,129,0.2),0_0_80px_-40px_rgba(220,38,38,0.12)]">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[2rem] bg-zinc-900/40 ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_25px_80px_-20px_rgba(0,0,0,0.65),0_0_100px_-30px_rgba(16,185,129,0.22),0_0_80px_-40px_rgba(220,38,38,0.16)]">
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0a0a0a]/35 via-transparent to-transparent" />
               <Image
-                src="/profile.jpg"
-                alt=""
+                src="/profile-photo-2026.png"
+                alt="Jose Maria Atonur con traje"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover object-[center_18%]"
+                className="object-cover object-[center_34%] saturate-[1.03] contrast-[1.03]"
               />
             </div>
           </motion.div>

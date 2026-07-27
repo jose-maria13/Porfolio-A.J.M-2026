@@ -21,6 +21,12 @@ export const portfolio: PortfolioContent = {
       value: "jose-maria13",
       href: "https://github.com/jose-maria13",
     },
+    {
+      id: "cv",
+      label: "CV",
+      value: "Ver / descargar CV",
+      href: "/cv-jose-maria-atonur.pdf",
+    },
   ],
   roles: [
     {

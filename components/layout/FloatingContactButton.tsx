@@ -14,12 +14,14 @@ const emojiByContact: Record<ContactLink["id"], string> = {
   gmail: "📧",
   linkedin: "💼",
   github: "🐙",
+  cv: "📄",
 };
 
 const accentByContact: Record<ContactLink["id"], string> = {
   gmail: "bg-[#ea4335]/15 text-red-100 border-[#ea4335]/40",
   linkedin: "bg-[#0a66c2]/15 text-sky-100 border-[#0a66c2]/45",
   github: "bg-zinc-800/80 text-zinc-100 border-zinc-600/70",
+  cv: "bg-[#10b981]/15 text-emerald-100 border-[#10b981]/45",
 };
 
 export function FloatingContactButton({ links }: FloatingContactButtonProps) {
@@ -95,6 +97,9 @@ export function FloatingContactButton({ links }: FloatingContactButtonProps) {
                     href={link.href}
                     target={link.id === "gmail" ? undefined : "_blank"}
                     rel={link.id === "gmail" ? undefined : "noreferrer"}
+                    download={
+                      link.id === "cv" ? "cv-jose-maria-atonur.pdf" : undefined
+                    }
                     className="min-w-0 flex-1 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/60"
                   >
                     <span className="block text-sm font-semibold text-zinc-100">
@@ -119,7 +124,11 @@ export function FloatingContactButton({ links }: FloatingContactButtonProps) {
                       className="shrink-0 text-base transition group-hover:scale-110"
                       aria-hidden
                     >
-                      {link.id === "linkedin" ? "🔗" : "🚀"}
+                      {link.id === "linkedin"
+                        ? "🔗"
+                        : link.id === "cv"
+                          ? "⬇️"
+                          : "🚀"}
                     </span>
                   )}
                 </div>

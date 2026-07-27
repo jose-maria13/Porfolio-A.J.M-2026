@@ -32,6 +32,7 @@ export default async function HomePage({ params }: PageProps) {
           rolesLabel={t("rolesLabel")}
           relatedTechnologiesLabel={t("relatedTechnologiesLabel")}
           ctaLabel={t("ctaViewWork")}
+          cvLabel={t("ctaViewCv")}
         />
 
         <AboutSection />
