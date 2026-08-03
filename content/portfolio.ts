@@ -25,7 +25,7 @@ export const portfolio: PortfolioContent = {
       id: "cv",
       label: "CV",
       value: "Ver / descargar CV",
-      href: "/cv-jose-maria-atonur.pdf",
+      href: "/cv-jose-maria-atonur-2026.pdf",
     },
   ],
   roles: [

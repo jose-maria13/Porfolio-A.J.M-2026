@@ -234,7 +234,7 @@ export function HeroSection({
                 {ctaLabel}
               </a>
               <a
-                href="/cv-jose-maria-atonur.pdf"
+                href="/cv-jose-maria-atonur-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-lg border border-[#10b981]/35 bg-[#10b981]/[0.08] px-6 py-3 text-sm font-medium text-emerald-100 transition hover:border-[#10b981]/75 hover:bg-[#10b981]/15 hover:shadow-[0_0_22px_rgba(16,185,129,0.28)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"

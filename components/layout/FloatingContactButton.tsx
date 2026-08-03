@@ -98,7 +98,9 @@ export function FloatingContactButton({ links }: FloatingContactButtonProps) {
                     target={link.id === "gmail" ? undefined : "_blank"}
                     rel={link.id === "gmail" ? undefined : "noreferrer"}
                     download={
-                      link.id === "cv" ? "cv-jose-maria-atonur.pdf" : undefined
+                      link.id === "cv"
+                        ? "cv-jose-maria-atonur-2026.pdf"
+                        : undefined
                     }
                     className="min-w-0 flex-1 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/60"
                   >
