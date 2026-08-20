@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { CertificationsSection } from "@/components/sections/CertificationsSection";
 
 type PageProps = {
   params: Promise<{ locale: "es" | "en" }>;
@@ -38,6 +39,7 @@ export default async function HomePage({ params }: PageProps) {
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
+        <CertificationsSection />
       </main>
       <FloatingContactButton links={portfolio.contact} />
     </>

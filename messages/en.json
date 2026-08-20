@@ -10,7 +10,8 @@
     "inicio": "Home",
     "sobreMi": "About",
     "experiencia": "Experience",
-    "proyectos": "Projects"
+    "proyectos": "Projects",
+    "certificaciones": "Certifications"
   },
   "home": {
     "heroGreetingLine1": "Hi,",
@@ -42,7 +43,25 @@
       "title": "Projects",
       "description": "Selected projects focused on data, automation, quality, and practical solution development.",
       "highlightsLabel": "Key highlights",
-      "stackLabel": "Tools used"
+      "stackLabel": "Tools used",
+      "spreadAriaLabel": "Projects carousel",
+      "prevLabel": "Previous project",
+      "nextLabel": "Next project"
+    },
+    "certifications": {
+      "eyebrow": "Continuous learning",
+      "title": "Certifications",
+      "description": "Official credentials and courses, organized by the platform where I earned them.",
+      "allLabel": "All",
+      "emptyLabel": "No certificates loaded yet",
+      "emptyHint": "Add images under public/certifications/(platform)/ and register them in content/portfolio.ts. The official link (credentialUrl) is optional.",
+      "credentialLabel": "View official credential",
+      "previewLabel": "View certificate",
+      "noCredentialLabel": "No official link — click to view it larger.",
+      "closePreviewLabel": "Close certificate preview",
+      "spreadAriaLabel": "Certifications carousel",
+      "prevLabel": "Previous certificate",
+      "nextLabel": "Next certificate"
     }
   },
   "localeSwitcher": {

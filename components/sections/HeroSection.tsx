@@ -1,12 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   staggerBackdrop,
   staggerContainer,
   staggerItem,
-  springTransition,
 } from "@/lib/motion";
 import { DataPipelineBackground } from "@/components/background/DataPipelineBackground";
 import type { RoleTechnology, TechAccent } from "@/content/types";
@@ -35,17 +35,15 @@ const chipBase =
 function TechChip({ label, accent }: { label: string; accent: TechAccent }) {
   const isData = accent === "data";
   return (
-    <motion.span
+    <span
       className={`${chipBase} ${
         isData
-          ? "border-[#10b981]/35 bg-[#10b981]/[0.07] text-emerald-100/90 hover:border-[#10b981]/80 hover:bg-[#10b981]/14 hover:shadow-[0_0_14px_rgba(16,185,129,0.38)]"
-          : "border-[#dc2626]/35 bg-[#dc2626]/[0.07] text-red-100/90 hover:border-[#dc2626]/85 hover:bg-[#dc2626]/14 hover:shadow-[0_0_14px_rgba(220,38,38,0.42)]"
+          ? "border-[#10b981]/35 bg-[#10b981]/[0.07] text-emerald-100/90"
+          : "border-[#dc2626]/35 bg-[#dc2626]/[0.07] text-red-100/90"
       }`}
-      whileHover={{ scale: 1.045 }}
-      transition={springTransition}
     >
       {label}
-    </motion.span>
+    </span>
   );
 }
 
@@ -98,32 +96,41 @@ function RoleCard({
   relatedTechnologiesLabel: string;
 }) {
   const isData = role.accent === "data";
-  const glow = isData
-    ? "hover:border-[#10b981]/55 hover:shadow-[0_18px_60px_-28px_rgba(16,185,129,0.9)] focus-within:border-[#10b981]/55 focus-within:shadow-[0_18px_60px_-28px_rgba(16,185,129,0.9)]"
-    : "hover:border-[#dc2626]/55 hover:shadow-[0_18px_60px_-28px_rgba(220,38,38,0.85)] focus-within:border-[#dc2626]/55 focus-within:shadow-[0_18px_60px_-28px_rgba(220,38,38,0.85)]";
+  const [open, setOpen] = useState(false);
+  const accentBorder = isData
+    ? open
+      ? "border-[#10b981]/45"
+      : "border-white/[0.08] hover:border-[#10b981]/30"
+    : open
+      ? "border-[#dc2626]/45"
+      : "border-white/[0.08] hover:border-[#dc2626]/30";
   const pulse = isData ? "bg-[#10b981]" : "bg-[#dc2626]";
 
   return (
-    <motion.li
-      className={`group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.035] p-3 text-left shadow-sm shadow-black/10 outline-none transition-[border-color,background-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:bg-white/[0.055] focus-within:-translate-y-1 focus-within:bg-white/[0.055] ${glow}`}
-      whileHover={{ y: -3 }}
-      transition={springTransition}
+    <li
+      className={`relative rounded-2xl border bg-white/[0.03] p-3 text-left transition-[border-color,background-color] duration-200 ${accentBorder} ${
+        open ? "bg-white/[0.05]" : "hover:bg-white/[0.045]"
+      }`}
     >
       <button
         type="button"
-        className="w-full text-left outline-none"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+        className="w-full text-left outline-none focus-visible:ring-2 focus-visible:ring-[#10b981]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
         aria-label={`${role.title}: ${relatedTechnologiesLabel}`}
       >
         <span
-          className={`mb-2 block h-1 w-8 rounded-full ${pulse} opacity-80 transition-all duration-300 group-hover:w-16 group-hover:opacity-100 group-focus-within:w-16 group-focus-within:opacity-100`}
+          className={`mb-2 block h-1 w-8 rounded-full ${pulse} opacity-80 transition-[width] duration-200 ${
+            open ? "w-14 opacity-100" : ""
+          }`}
         />
         <span className="block text-sm font-semibold text-zinc-100 sm:text-[15px]">
           {role.title}
         </span>
-        <span className="mt-1 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-zinc-500 opacity-80">
+        <span className="mt-1 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.16em] text-zinc-500">
           {relatedTechnologiesLabel}
           <svg
-            className="h-3 w-3 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+            className={`h-3 w-3 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
             viewBox="0 0 12 12"
             fill="none"
             aria-hidden="true"
@@ -139,23 +146,25 @@ function RoleCard({
         </span>
       </button>
 
-      <div className="grid max-h-0 opacity-0 transition-[max-height,opacity,margin-top] duration-300 ease-out group-hover:mt-3 group-hover:max-h-96 group-hover:opacity-100 group-focus-within:mt-3 group-focus-within:max-h-96 group-focus-within:opacity-100">
-        <div className="flex flex-wrap gap-1.5 border-t border-white/[0.07] pt-3">
-          {role.technologies.map((technology) => (
-            <TechnologyItem
-              key={
-                typeof technology === "string"
-                  ? `${role.id}-${technology}`
-                  : `${role.id}-${technology.label}`
-              }
-              technology={technology}
-              roleId={role.id}
-              accent={role.accent}
-            />
-          ))}
+      {open ? (
+        <div className="mt-3 border-t border-white/[0.07] pt-3">
+          <div className="flex flex-wrap gap-1.5">
+            {role.technologies.map((technology) => (
+              <TechnologyItem
+                key={
+                  typeof technology === "string"
+                    ? `${role.id}-${technology}`
+                    : `${role.id}-${technology.label}`
+                }
+                technology={technology}
+                roleId={role.id}
+                accent={role.accent}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </motion.li>
+      ) : null}
+    </li>
   );
 }
 
@@ -202,7 +211,7 @@ export function HeroSection({
               <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl lg:text-[2.75rem] xl:text-6xl">
                   <span className="block text-zinc-400">{greetingLine1}</span>
-                  <span className="mt-1 block whitespace-nowrap text-[clamp(1.35rem,4.2vw,3.75rem)] text-zinc-50">
+                  <span className="mt-1 block text-[clamp(1.35rem,4.2vw,3.75rem)] text-zinc-50 sm:whitespace-nowrap">
                     {greetingLine2}
                   </span>
                 </h1>
@@ -214,7 +223,7 @@ export function HeroSection({
                 <h2 className="text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
                   {rolesLabel}
                 </h2>
-                <ul className="grid max-w-3xl gap-2 sm:grid-cols-2">
+                <ul className="grid max-w-3xl items-start gap-2 sm:grid-cols-2">
                   {roles.map((role) => (
                     <RoleCard
                       key={role.id}

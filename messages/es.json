@@ -10,7 +10,8 @@
     "inicio": "Inicio",
     "sobreMi": "Sobre mí",
     "experiencia": "Experiencia",
-    "proyectos": "Proyectos"
+    "proyectos": "Proyectos",
+    "certificaciones": "Certificaciones"
   },
   "home": {
     "heroGreetingLine1": "Hola,",
@@ -42,7 +43,25 @@
       "title": "Proyectos",
       "description": "Selección de proyectos orientados a datos, automatización, calidad y desarrollo de soluciones prácticas.",
       "highlightsLabel": "Puntos destacados",
-      "stackLabel": "Herramientas utilizadas"
+      "stackLabel": "Herramientas utilizadas",
+      "spreadAriaLabel": "Carrusel de proyectos",
+      "prevLabel": "Proyecto anterior",
+      "nextLabel": "Proyecto siguiente"
+    },
+    "certifications": {
+      "eyebrow": "Formación continua",
+      "title": "Certificaciones",
+      "description": "Credenciales y cursos oficiales, organizados por la plataforma donde los obtuve.",
+      "allLabel": "Todas",
+      "emptyLabel": "Todavía no hay certificados cargados",
+      "emptyHint": "Agregá las imágenes en public/certifications/(plataforma)/ y registralas en content/portfolio.ts. El link oficial (credentialUrl) es opcional.",
+      "credentialLabel": "Ver credencial oficial",
+      "previewLabel": "Ver certificado",
+      "noCredentialLabel": "Sin link oficial — hacé click para verlo en grande.",
+      "closePreviewLabel": "Cerrar vista del certificado",
+      "spreadAriaLabel": "Carrusel de certificaciones",
+      "prevLabel": "Certificado anterior",
+      "nextLabel": "Certificado siguiente"
     }
   },
   "localeSwitcher": {

@@ -8,6 +8,7 @@ const navIds = [
   { key: "sobreMi" as const, hash: "sobre-mi" },
   { key: "experiencia" as const, hash: "experiencia" },
   { key: "proyectos" as const, hash: "proyectos" },
+  { key: "certificaciones" as const, hash: "certificaciones" },
 ];
 
 export function Navbar() {
@@ -44,12 +45,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <ul className="flex min-w-0 flex-1 items-center justify-center gap-0.5 overflow-x-auto px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
+        <ul className="flex min-w-0 flex-1 items-center justify-start gap-0.5 overflow-x-auto px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
           {navIds.map(({ key, hash }) => (
             <li key={hash} className="shrink-0">
               <a
                 href={`#${hash}`}
-                className="block rounded-full px-3 py-2 text-xs font-medium text-zinc-400 transition-colors hover:bg-white/[0.06] hover:text-zinc-100 sm:px-3.5 sm:text-sm"
+                className="block whitespace-nowrap rounded-full px-2.5 py-2 text-[11px] font-medium text-zinc-400 transition-colors hover:bg-white/[0.06] hover:text-zinc-100 sm:px-3.5 sm:text-sm"
               >
                 {t(key)}
               </a>

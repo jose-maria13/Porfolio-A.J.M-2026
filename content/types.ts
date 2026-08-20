@@ -70,6 +70,34 @@ export type LanguageItem = {
   proficiency: number;
 };
 
+export type CertificationPlatformId =
+  | "coderhouse"
+  | "coursera"
+  | "udemy"
+  | "google"
+  | "aws"
+  | "platzi"
+  | "linkedin"
+  | "otros";
+
+export type CertificationPlatform = {
+  id: CertificationPlatformId;
+  label: LocaleCopy;
+};
+
+/**
+ * image: ruta pública, ej. `/certifications/coursera/mi-cert.png`
+ * credentialUrl: link oficial opcional (Coursera/Verify/etc). Si no está, la card no es clickeable hacia afuera.
+ */
+export type CertificationItem = {
+  id: string;
+  platformId: CertificationPlatformId;
+  title: LocaleCopy;
+  year?: string;
+  image: string;
+  credentialUrl?: string;
+};
+
 export type PortfolioContent = {
   name: string;
   contact: ContactLink[];
@@ -85,4 +113,6 @@ export type PortfolioContent = {
   };
   experiences: ExperienceItem[];
   projects: ProjectItem[];
+  certificationPlatforms: CertificationPlatform[];
+  certifications: CertificationItem[];
 };

@@ -405,4 +405,130 @@ export const portfolio: PortfolioContent = {
       ],
     },
   ],
+  certificationPlatforms: [
+    { id: "aws", label: { es: "AWS", en: "AWS" } },
+    { id: "coderhouse", label: { es: "Coderhouse", en: "Coderhouse" } },
+    { id: "udemy", label: { es: "Udemy", en: "Udemy" } },
+    { id: "coursera", label: { es: "Coursera", en: "Coursera" } },
+    { id: "google", label: { es: "Google", en: "Google" } },
+    { id: "platzi", label: { es: "Platzi", en: "Platzi" } },
+    { id: "linkedin", label: { es: "LinkedIn Learning", en: "LinkedIn Learning" } },
+    { id: "otros", label: { es: "Otros", en: "Other" } },
+  ],
+  certifications: [
+    {
+      id: "aws-cloud-practitioner",
+      platformId: "aws",
+      title: {
+        es: "AWS Certified Cloud Practitioner",
+        en: "AWS Certified Cloud Practitioner",
+      },
+      year: "2025",
+      image: "/certifications/aws/cloud-practitioner.png",
+      credentialUrl:
+        "https://www.credly.com/badges/9cb66081-e284-48f6-95c9-b91ed315800b/linked_in_profile",
+    },
+    {
+      id: "coderhouse-testing-qa-manual",
+      platformId: "coderhouse",
+      title: {
+        es: "Testing QA Manual",
+        en: "Manual QA Testing",
+      },
+      year: "2024",
+      image: "/certifications/coderhouse/testing-qa-manual.png",
+    },
+    {
+      id: "coderhouse-publicidad-redes-avanzado",
+      platformId: "coderhouse",
+      title: {
+        es: "Marketing Digital: Publicidad en Redes Avanzado",
+        en: "Digital Marketing: Advanced Social Ads",
+      },
+      year: "2023",
+      image: "/certifications/coderhouse/publicidad-redes-avanzado.png",
+    },
+    {
+      id: "coderhouse-community-manager-publicidad",
+      platformId: "coderhouse",
+      title: {
+        es: "Marketing Digital: Community Manager & Publicidad",
+        en: "Digital Marketing: Community Manager & Advertising",
+      },
+      year: "2022",
+      image: "/certifications/coderhouse/community-manager-publicidad.png",
+    },
+    {
+      id: "udemy-bases-datos-sql-tester",
+      platformId: "udemy",
+      title: {
+        es: "Bases de datos y SQL para tester",
+        en: "Databases and SQL for Testers",
+      },
+      year: "2024",
+      image: "/certifications/udemy/base-de-datos-sql-tester.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-10d88c15-a3b8-4e3b-a0cd-bb65aa09302e/",
+    },
+    {
+      id: "udemy-google-sheets",
+      platformId: "udemy",
+      title: {
+        es: "Especialización de Google Sheets",
+        en: "Google Sheets Specialization",
+      },
+      year: "2024",
+      image: "/certifications/udemy/google-sheets.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-475202d3-cf6b-4b60-874e-091904008242/",
+    },
+    {
+      id: "udemy-n8n-agentes-ia",
+      platformId: "udemy",
+      title: {
+        es: "n8n Total: Agentes IA y automatización sin código",
+        en: "n8n Total: AI Agents and No-Code Automation",
+      },
+      year: "2025",
+      image: "/certifications/udemy/n8n-agentes-ia.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-8beb1065-6ea0-4a85-bc7e-93b8bd95d08a/",
+    },
+    {
+      id: "udemy-aws-desde-cero",
+      platformId: "udemy",
+      title: {
+        es: "Formación AWS desde cero",
+        en: "AWS Training from Scratch",
+      },
+      year: "2025",
+      image: "/certifications/udemy/uc-1ab96526.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-1ab96526-bc18-472d-9601-7f69325083a5/",
+    },
+    {
+      id: "udemy-postman-masterclass",
+      platformId: "udemy",
+      title: {
+        es: "Testing con Postman: Masterclass",
+        en: "Testing with Postman: Masterclass",
+      },
+      year: "2025",
+      image: "/certifications/udemy/uc-28a92b27.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-28a92b27-3b02-4de1-a0c4-f334dec1b776/",
+    },
+    {
+      id: "udemy-aws-cloud-practitioner-prep",
+      platformId: "udemy",
+      title: {
+        es: "AWS Certified Cloud Practitioner (CLF-C02)",
+        en: "AWS Certified Cloud Practitioner (CLF-C02)",
+      },
+      year: "2025",
+      image: "/certifications/udemy/uc-514e7f8b.png",
+      credentialUrl:
+        "https://www.udemy.com/certificate/UC-514e7f8b-f943-4032-9fe3-355b6145ceb5/",
+    },
+  ],
 };

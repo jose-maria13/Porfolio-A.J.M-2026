@@ -22,7 +22,7 @@ export async function AboutSection() {
   return (
     <section
       id="sobre-mi"
-      className="scroll-mt-24 border-t border-zinc-800/60 bg-[#0a0a0a] md:scroll-mt-24"
+      className="scroll-mt-24 border-t border-zinc-800/60 md:scroll-mt-24"
       aria-labelledby="sobre-mi-heading"
     >
       <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
