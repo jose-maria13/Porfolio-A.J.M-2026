@@ -3,44 +3,35 @@
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 
-const EMERALD = "#10b981";
-const CRIMSON = "#dc2626";
+type Star = {
+  x: number;
+  y: number;
+  r: number;
+  speed: number;
+  alpha: number;
+};
 
-type NodeDef = { nx: number; ny: number; accent: "emerald" | "crimson" };
-type EdgeDef = { from: number; to: number };
+function createStars(count: number): Star[] {
+  return Array.from({ length: count }, (_, index) => {
+    const seed = Math.sin(index * 999) * 10000;
+    const x = seed - Math.floor(seed);
+    const ySeed = Math.sin(index * 444) * 10000;
+    const y = ySeed - Math.floor(ySeed);
 
-const NODES: NodeDef[] = [
-  { nx: 0.12, ny: 0.22, accent: "emerald" },
-  { nx: 0.12, ny: 0.48, accent: "crimson" },
-  { nx: 0.12, ny: 0.74, accent: "emerald" },
-  { nx: 0.42, ny: 0.36, accent: "emerald" },
-  { nx: 0.42, ny: 0.64, accent: "crimson" },
-  { nx: 0.68, ny: 0.28, accent: "crimson" },
-  { nx: 0.68, ny: 0.52, accent: "emerald" },
-  { nx: 0.9, ny: 0.42, accent: "crimson" },
-];
-
-const EDGES: EdgeDef[] = [
-  { from: 0, to: 3 },
-  { from: 1, to: 3 },
-  { from: 1, to: 4 },
-  { from: 2, to: 4 },
-  { from: 3, to: 5 },
-  { from: 3, to: 6 },
-  { from: 4, to: 6 },
-  { from: 5, to: 7 },
-  { from: 6, to: 7 },
-];
-
-function hexToRgba(hex: string, a: number) {
-  const r = Number.parseInt(hex.slice(1, 3), 16);
-  const g = Number.parseInt(hex.slice(3, 5), 16);
-  const b = Number.parseInt(hex.slice(5, 7), 16);
-  return `rgba(${r},${g},${b},${a})`;
+    return {
+      x,
+      y,
+      r: index % 9 === 0 ? 1.6 : index % 4 === 0 ? 1.1 : 0.75,
+      speed: 0.015 + (index % 7) * 0.004,
+      alpha: 0.35 + (index % 5) * 0.1,
+    };
+  });
 }
 
+const STARS = createStars(170);
+
 /**
- * Fondo tipo DAG / pipeline: nodos y aristas sutiles en Canvas (sin dependencias pesadas).
+ * Fondo tipo starfield: minimalista, liviano y determinístico.
  */
 export function DataPipelineBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -53,55 +44,34 @@ export function DataPipelineBackground() {
     if (!ctx) return;
 
     let rafId = 0;
-    const t0 = performance.now();
-
     const draw = (tMs: number) => {
       const w = canvas.clientWidth;
       const h = canvas.clientHeight;
       if (w === 0 || h === 0) return;
 
-      const t = reduceMotion ? 0 : (tMs - t0) * 0.001;
+      const t = reduceMotion ? 0 : tMs * 0.001;
 
       ctx.clearRect(0, 0, w, h);
 
-      for (let i = 0; i < EDGES.length; i++) {
-        const e = EDGES[i];
-        const a = NODES[e.from];
-        const b = NODES[e.to];
-        const x1 = a.nx * w;
-        const y1 = a.ny * h;
-        const x2 = b.nx * w;
-        const y2 = b.ny * h;
-        const alpha = reduceMotion ? 0.16 : 0.09 + 0.07 * Math.sin(t * 1.1 + i * 0.4);
+      const gradient = ctx.createRadialGradient(w * 0.5, h, 0, w * 0.5, h, h);
+      gradient.addColorStop(0, "rgba(27, 39, 53, 0.85)");
+      gradient.addColorStop(0.45, "rgba(9, 10, 15, 0.78)");
+      gradient.addColorStop(1, "rgba(3, 7, 18, 0.96)");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, w, h);
+
+      for (const star of STARS) {
+        const drift = reduceMotion ? 0 : t * star.speed;
+        const x = star.x * w;
+        const y = ((star.y + drift) % 1) * h;
         ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x2, y2);
-        ctx.strokeStyle = `rgba(148, 163, 184, ${alpha})`;
-        ctx.lineWidth = 0.9;
-        ctx.stroke();
+        ctx.arc(x, y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${star.alpha})`;
+        ctx.fill();
       }
 
-      for (let i = 0; i < NODES.length; i++) {
-        const n = NODES[i];
-        const x = n.nx * w;
-        const y = n.ny * h;
-        const pulse = reduceMotion ? 0.5 : 0.42 + 0.12 * Math.sin(t * 1.25 + i * 0.65);
-        const color = n.accent === "emerald" ? EMERALD : CRIMSON;
-        const r = 2.2 + pulse * 1.4;
-
-        ctx.beginPath();
-        ctx.arc(x, y, r + 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = hexToRgba(color, 0.06 + pulse * 0.05);
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.fillStyle = hexToRgba(color, 0.2 + pulse * 0.12);
-        ctx.fill();
-        ctx.strokeStyle = hexToRgba(color, 0.42);
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      }
+      ctx.fillStyle = "rgba(16,185,129,0.035)";
+      ctx.fillRect(0, 0, w, h);
     };
 
     const loop = (now: number) => {
@@ -140,10 +110,16 @@ export function DataPipelineBackground() {
   }, [reduceMotion]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="pointer-events-none absolute inset-0 h-full w-full"
-      aria-hidden
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(16,185,129,0.12),transparent_28%),radial-gradient(circle_at_78%_36%,rgba(220,38,38,0.08),transparent_24%)]"
+        aria-hidden
+      />
+    </>
   );
 }

@@ -1,9 +1,9 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 32, height: 32 };
+export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
-/** Favicon delicado: iniciales J.A. de Jose Maria Atonur */
+/** Favicon monograma: iniciales JMA de Jose Maria Atonur */
 export default function Icon() {
   return new ImageResponse(
     (
@@ -14,9 +14,11 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0b0d10",
-          borderRadius: 8,
-          border: "1px solid rgba(16, 185, 129, 0.35)",
+          background:
+            "linear-gradient(135deg, #07111f 0%, #0b0d10 48%, #052e2b 100%)",
+          borderRadius: 18,
+          border: "1px solid rgba(16, 185, 129, 0.45)",
+          boxShadow: "inset 0 0 20px rgba(16, 185, 129, 0.12)",
         }}
       >
         <div
@@ -24,25 +26,23 @@ export default function Icon() {
             display: "flex",
             alignItems: "baseline",
             color: "#f4f4f5",
-            fontSize: 13,
-            fontWeight: 560,
-            letterSpacing: "0.04em",
+            fontSize: 20,
+            fontWeight: 700,
+            letterSpacing: "-0.08em",
             fontFamily:
               'ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
           }}
         >
-          <span>J</span>
+          <span style={{ color: "#f8fafc" }}>J</span>
           <span
             style={{
               color: "#10b981",
-              fontSize: 10,
               margin: "0 1px",
-              opacity: 0.9,
             }}
           >
-            .
+            M
           </span>
-          <span>A</span>
+          <span style={{ color: "#f8fafc" }}>A</span>
         </div>
       </div>
     ),

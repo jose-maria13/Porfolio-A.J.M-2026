@@ -16,9 +16,8 @@
   "home": {
     "heroGreetingLine1": "Hi,",
     "heroGreetingLine2": "I'm {name}",
-    "heroSubtitle": "Professional focused on databases, functional analysis, and data quality. Experienced in SQL administration, process validation, QA automation, and high-volume data projects.",
-    "rolesLabel": "Industry-focused profile",
-    "relatedTechnologiesLabel": "Key stack",
+    "heroRole": "Data Engineer and Data Analyst",
+    "heroSubtitle": "I combine data engineering with a strict software quality mindset. I specialize in processing massive cloud datasets, orchestrating complex workflows, and applying Machine Learning through predictive models. Thanks to my experience in QA Automation and Full Stack development, I design pipelines that not only move information but also include automated tests to ensure resilience and seamless integration with the final product.",
     "ctaViewWork": "See my work",
     "ctaViewCv": "View / download CV"
   },
@@ -41,7 +40,6 @@
     "projects": {
       "eyebrow": "Technical portfolio",
       "title": "Projects",
-      "description": "Selected projects focused on data, automation, quality, and practical solution development.",
       "highlightsLabel": "Key highlights",
       "stackLabel": "Tools used",
       "spreadAriaLabel": "Projects carousel",

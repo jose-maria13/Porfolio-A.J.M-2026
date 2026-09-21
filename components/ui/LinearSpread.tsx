@@ -108,8 +108,12 @@ export function LinearSpread<T extends LinearSpreadItem>({
   const activeItem = items[safeIndex];
   const count = items.length;
   const showArrows = count > 1;
-  const nearStep = isMobile ? 58 : 110;
-  const farStep = isMobile ? 88 : 160;
+  const nearStep = isMobile ? 52 : 96;
+  const farStep = isMobile ? 80 : 138;
+  const cardTransition = {
+    duration: 0.34,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
 
   return (
     <div className={className}>
@@ -126,14 +130,14 @@ export function LinearSpread<T extends LinearSpreadItem>({
         </span>
 
         <div className="relative mx-auto max-w-5xl">
-          <div className="relative mx-auto flex h-[min(62vw,17.5rem)] items-center justify-center overflow-hidden px-11 sm:h-[22rem] sm:overflow-visible sm:px-14">
+          <div className="relative mx-auto flex h-[min(58vw,16rem)] items-center justify-center overflow-hidden px-11 sm:h-[19.5rem] sm:overflow-visible sm:px-14">
             {items.map((item, index) => {
               const offset = index - safeIndex;
               const abs = Math.abs(offset);
               const isActive = offset === 0;
               const x =
                 offset * (abs === 0 ? 0 : abs === 1 ? nearStep : farStep);
-              const scale = isActive ? 1 : abs === 1 ? 0.86 : 0.74;
+              const scale = isActive ? 1 : abs === 1 ? 0.88 : 0.78;
               const opacity = isActive
                 ? 1
                 : abs === 1
@@ -153,21 +157,15 @@ export function LinearSpread<T extends LinearSpreadItem>({
                   id={`${labelId}-option-${item.id}`}
                   role="option"
                   aria-selected={isActive}
-                  className="absolute w-[min(70vw,15.5rem)] sm:w-[20rem]"
+                  className="absolute w-[min(68vw,14.5rem)] sm:w-[17.25rem]"
                   style={{ zIndex }}
                   initial={false}
                   animate={{
                     x,
                     scale,
                     opacity,
-                    filter:
-                      isActive
-                        ? "blur(0px)"
-                        : abs > 1
-                          ? "blur(1px)"
-                          : "blur(0px)",
                   }}
-                  transition={springTransition}
+                  transition={cardTransition}
                 >
                   <button
                     type="button"
@@ -213,7 +211,7 @@ export function LinearSpread<T extends LinearSpreadItem>({
           ) : null}
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2 sm:mt-6">
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-2 sm:mt-4">
           {items.map((item, index) => (
             <button
               key={`dot-${item.id}`}

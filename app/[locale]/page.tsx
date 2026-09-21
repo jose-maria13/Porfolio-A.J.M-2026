@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { portfolio } from "@/content/portfolio";
 import { Navbar } from "@/components/layout/Navbar";
 import { FloatingContactButton } from "@/components/layout/FloatingContactButton";
@@ -14,12 +14,8 @@ type PageProps = {
 
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations("home");
-
-  const roles = portfolio.roles.map((role) => ({
-    ...role,
-    title: role.title[locale],
-  }));
 
   return (
     <>
@@ -28,10 +24,8 @@ export default async function HomePage({ params }: PageProps) {
         <HeroSection
           greetingLine1={t("heroGreetingLine1")}
           greetingLine2={t("heroGreetingLine2", { name: portfolio.name })}
+          heroRole={t("heroRole")}
           heroSubtitle={t("heroSubtitle")}
-          roles={roles}
-          rolesLabel={t("rolesLabel")}
-          relatedTechnologiesLabel={t("relatedTechnologiesLabel")}
           ctaLabel={t("ctaViewWork")}
           cvLabel={t("ctaViewCv")}
         />

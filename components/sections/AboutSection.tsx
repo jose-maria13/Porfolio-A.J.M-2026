@@ -22,10 +22,10 @@ export async function AboutSection() {
   return (
     <section
       id="sobre-mi"
-      className="scroll-mt-24 border-t border-zinc-800/60 md:scroll-mt-24"
+      className="scroll-mt-24 md:scroll-mt-24"
       aria-labelledby="sobre-mi-heading"
     >
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
+      <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-28">
         <div className="max-w-3xl">
           <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#10b981]">
             {t("eyebrow")}
@@ -38,7 +38,7 @@ export async function AboutSection() {
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div className="mt-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="relative">
             <div className="absolute bottom-4 left-[17px] top-4 w-px bg-gradient-to-b from-[#10b981]/70 via-zinc-700 to-[#dc2626]/60" />
             <ol className="space-y-5">
@@ -47,7 +47,7 @@ export async function AboutSection() {
                   <span className="absolute left-0 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-zinc-950 shadow-[0_0_24px_rgba(16,185,129,0.22)]">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#10b981]" />
                   </span>
-                  <article className="group rounded-3xl border border-white/[0.07] bg-white/[0.035] p-5 shadow-sm shadow-black/20 transition duration-300 hover:-translate-y-1 hover:border-[#10b981]/40 hover:bg-white/[0.055] hover:shadow-[0_24px_70px_-35px_rgba(16,185,129,0.8)]">
+                  <article className="group rounded-3xl border border-white/[0.08] bg-white/[0.035] p-5 shadow-sm shadow-black/20 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#10b981]/40 hover:bg-white/[0.06] hover:shadow-[0_24px_70px_-35px_rgba(16,185,129,0.8)]">
                     <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#10b981]">
                       {item.period}
                     </p>
@@ -63,16 +63,27 @@ export async function AboutSection() {
             </ol>
           </div>
 
-          <div className="rounded-[2rem] border border-white/[0.07] bg-zinc-950/45 p-6 shadow-[0_24px_90px_-50px_rgba(220,38,38,0.45)] sm:p-8">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.045] p-6 shadow-[0_24px_90px_-50px_rgba(16,185,129,0.35)] backdrop-blur-md sm:p-8 lg:p-10">
+            <div
+              className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#10b981]/10 blur-3xl"
+              aria-hidden
+            />
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px flex-1 bg-gradient-to-r from-[#dc2626]/70 to-transparent" />
               <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500">
                 {t("personalLabel")}
               </span>
             </div>
-            <div className="space-y-5">
-              {personalParagraphs.map((paragraph) => (
-                <p key={paragraph} className="text-base leading-8 text-zinc-300">
+            <div className="relative space-y-6">
+              {personalParagraphs.map((paragraph, index) => (
+                <p
+                  key={paragraph}
+                  className={
+                    index === 0
+                      ? "text-xl leading-9 tracking-tight text-zinc-100 sm:text-2xl sm:leading-10"
+                      : "text-base leading-8 text-zinc-300"
+                  }
+                >
                   {paragraph}
                 </p>
               ))}

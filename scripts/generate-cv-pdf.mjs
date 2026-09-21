@@ -247,7 +247,7 @@ const html = `<!doctype html>
         <div>
           <h1 class="name">José María Atonur</h1>
           <p class="degree">Técnico Universitario en Desarrollo y Calidad de Software</p>
-          <div class="headline">Analista de Datos | QA | Automatización | Análisis Funcional</div>
+          <div class="headline">Data Engineer | Analista de Datos | QA Automation | Machine Learning</div>
         </div>
         <address class="contact">
           <span>· San Miguel de Tucumán · Argentina</span>
@@ -259,9 +259,9 @@ const html = `<!doctype html>
       <section class="section">
         <h2 class="section-title">PERFIL PROFESIONAL</h2>
         <div class="profile">
-          <p>Me interesa continuar desarrollándome en proyectos donde pueda combinar QA, análisis funcional y automatización de pruebas, aportando una mirada orientada a la calidad, la mejora continua y la comprensión real del negocio.</p>
-          <p>Actualmente curso la Licenciatura en Ciencia de Datos (UCBA), fortaleciendo mis conocimientos en análisis de datos, Machine Learning y modelos analíticos.</p>
-          <p>Me considero una persona curiosa, creativa y enfocada en entender el porqué de cada proceso. Busco conectar con los equipos de forma colaborativa, mantener una comunicación clara y aportar valor desde lo técnico sin perder la calidad humana detrás de cada interacción.</p>
+          <p>Data Engineer y Analista de Datos con base sólida en calidad de software, automatización de pruebas y validación funcional de procesos analíticos. Me enfoco en diseñar flujos de datos seguros, trazables y orientados a generar valor real para el negocio.</p>
+          <p>Actualmente curso la Licenciatura en Ciencia de Datos (UCBA), profundizando en análisis de datos, Machine Learning, modelos predictivos y arquitecturas cloud. Mi experiencia en QA Automation aporta rigurosidad para validar pipelines, bases de datos, reglas de negocio y estabilidad de procesos críticos.</p>
+          <p>Mi perfil Full Stack me permite comprender el ciclo completo: desde la nube, los datos y la automatización, hasta la integración con productos digitales. Busco traducir requerimientos complejos a un lenguaje claro y colaborar con equipos técnicos y funcionales de forma efectiva.</p>
         </div>
       </section>
 
@@ -269,18 +269,18 @@ const html = `<!doctype html>
         <h2 class="section-title">EXPERIENCIA LABORAL</h2>
         <article class="item">
           <div class="item-header">
-            <h3 class="role">QA & Data Analyst</h3>
+            <h3 class="role">Data Engineer, QA & Data Analyst</h3>
             <div class="meta">${link(links.strata, "Strata Analytics")} | Octubre 2024 - Actualidad</div>
           </div>
           <ul>
-            <li>Validación funcional de procesos analíticos, asegurando la calidad y consistencia de la información en plataformas cloud.</li>
-            <li>Diseño y ejecución de casos de prueba a partir de historias de usuario, criterios de aceptación y reglas de negocio.</li>
-            <li>Análisis y validación de bases de datos, formatos de tablas y pipelines de procesamiento utilizando SQL, Oracle y Snowflake.</li>
-            <li>Validación de campañas comerciales y soporte a procesos críticos de negocio.</li>
-            <li>Participación en proyectos de automatización y validación de modelos predictivos, colaborando con el equipo de Data & Analytics.</li>
-            <li>Colaboración con equipos funcionales y técnicos en el análisis, diagnóstico y resolución de incidencias.</li>
+            <li>Validación funcional y técnica de procesos analíticos, asegurando calidad, consistencia y trazabilidad de la información en entornos cloud.</li>
+            <li>Análisis y validación de pipelines, formatos de tablas, reglas de negocio y flujos de procesamiento utilizando SQL, Oracle, Snowflake y AWS.</li>
+            <li>Diseño y ejecución de casos de prueba para procesos de datos, integraciones, campañas comerciales y componentes críticos del negocio.</li>
+            <li>Automatización y soporte de pruebas sobre procesos analíticos, APIs y validaciones end-to-end, aplicando criterios de QA Automation.</li>
+            <li>Participación en proyectos de Machine Learning y modelos predictivos, colaborando en validaciones de datos, resultados y estabilidad operativa.</li>
+            <li>Colaboración con equipos funcionales y técnicos para analizar requerimientos, diagnosticar incidencias y traducir necesidades complejas a soluciones claras.</li>
           </ul>
-          <div class="stack">Stack tecnológico: SQL · Oracle · Snowflake · Python · AWS · Cypress · Git · Machine Learning</div>
+          <div class="stack">Stack tecnológico: SQL · Oracle · Snowflake · Python · AWS · Cypress · Git · Machine Learning · Data Quality</div>
         </article>
 
         <article class="item">
@@ -352,10 +352,10 @@ const html = `<!doctype html>
       <section class="section">
         <h2 class="section-title">COMPETENCIAS TÉCNICAS</h2>
         <div class="grid-two">
-          <div class="compact-row"><span class="label">Bases de Datos & Datos</span>SQL · T-SQL · Oracle · MongoDB · Snowflake · Python · AWS · Machine Learning · Data Quality · Pipelines</div>
-          <div class="compact-row"><span class="label">QA & Testing</span>Cypress · Selenium · E2E Testing · Stress Testing · Postman · Test Plans · Jira · XRay · TestRail</div>
-          <div class="compact-row"><span class="label">Desarrollo & Análisis</span>JavaScript · TypeScript · React · Next.js · Node.js · HTML · CSS · Tailwind · UML · Git · GitHub</div>
-          <div class="compact-row"><span class="label">Herramientas & Metodologías</span>Docker · CI/CD · Stripe · Excel · Word · Notion · Trello · Figma · Scrum · Kanban</div>
+          <div class="compact-row"><span class="label">Data Engineering & Cloud</span>SQL · Oracle · Snowflake · Python · AWS · Data Quality · Pipelines · Modelos predictivos</div>
+          <div class="compact-row"><span class="label">QA Automation & Testing</span>Cypress · Selenium · E2E Testing · Stress Testing · Postman · Test Plans · Jira · XRay · TestRail</div>
+          <div class="compact-row"><span class="label">Data Analysis & ML</span>Machine Learning · Validación de modelos · Análisis funcional · Reglas de negocio · Reporting · Excel</div>
+          <div class="compact-row"><span class="label">Full Stack & Producto</span>JavaScript · TypeScript · React · Next.js · Node.js · HTML · CSS · Tailwind · Git · GitHub</div>
         </div>
       </section>
 

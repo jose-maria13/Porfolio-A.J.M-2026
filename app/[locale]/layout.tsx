@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { DataPipelineBackground } from "@/components/background/DataPipelineBackground";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -50,8 +51,14 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="relative min-h-full flex flex-col font-sans text-zinc-100">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+      <body className="relative min-h-full overflow-x-hidden bg-[#030712] font-sans text-zinc-100">
+        <div className="fixed inset-0 z-0" aria-hidden>
+          <DataPipelineBackground />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#030712]/15 via-[#030712]/60 to-[#030712]/95" />
+        </div>
+        <div className="relative z-10 flex min-h-full flex-col">
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );

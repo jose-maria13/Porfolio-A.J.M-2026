@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-/** Ícono Apple Touch con las mismas iniciales */
+/** Ícono Apple Touch con monograma JMA */
 export default function AppleIcon() {
   return new ImageResponse(
     (
@@ -14,9 +14,11 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0b0d10",
+          background:
+            "linear-gradient(135deg, #07111f 0%, #0b0d10 48%, #052e2b 100%)",
           borderRadius: 36,
-          border: "2px solid rgba(16, 185, 129, 0.4)",
+          border: "2px solid rgba(16, 185, 129, 0.45)",
+          boxShadow: "inset 0 0 54px rgba(16, 185, 129, 0.14)",
         }}
       >
         <div
@@ -24,25 +26,23 @@ export default function AppleIcon() {
             display: "flex",
             alignItems: "baseline",
             color: "#f4f4f5",
-            fontSize: 72,
-            fontWeight: 560,
-            letterSpacing: "0.06em",
+            fontSize: 62,
+            fontWeight: 700,
+            letterSpacing: "-0.08em",
             fontFamily:
               'ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif',
           }}
         >
-          <span>J</span>
+          <span style={{ color: "#f8fafc" }}>J</span>
           <span
             style={{
               color: "#10b981",
-              fontSize: 48,
               margin: "0 4px",
-              opacity: 0.95,
             }}
           >
-            .
+            M
           </span>
-          <span>A</span>
+          <span style={{ color: "#f8fafc" }}>A</span>
         </div>
       </div>
     ),

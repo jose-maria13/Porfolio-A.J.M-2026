@@ -3,22 +3,6 @@ export type LocaleCopy = {
   en: string;
 };
 
-export type TechAccent = "data" | "dev";
-
-export type RoleTechnology =
-  | string
-  | {
-      label: string;
-      items: string[];
-    };
-
-export type RoleProfile = {
-  id: string;
-  title: LocaleCopy;
-  technologies: RoleTechnology[];
-  accent: TechAccent;
-};
-
 export type TimelineItem = {
   id: string;
   period: LocaleCopy;
@@ -101,7 +85,6 @@ export type CertificationItem = {
 export type PortfolioContent = {
   name: string;
   contact: ContactLink[];
-  roles: RoleProfile[];
   education: LocaleCopy;
   languages: LanguageItem[];
   about: {

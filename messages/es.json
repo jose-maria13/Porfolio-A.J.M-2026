@@ -16,9 +16,8 @@
   "home": {
     "heroGreetingLine1": "Hola,",
     "heroGreetingLine2": "soy {name}",
-    "heroSubtitle": "Profesional orientado a bases de datos, análisis funcional y calidad de datos. Experiencia en administración SQL, validación de procesos, automatización QA y proyectos con alto volumen de información.",
-    "rolesLabel": "Perfil orientado al sector",
-    "relatedTechnologiesLabel": "Stack clave",
+    "heroRole": "Data Engineer / Analista de Datos",
+    "heroSubtitle": "Combino la ingeniería de datos con una visión estricta de calidad de software. Me especializo en procesar datos masivos en la nube, orquestar flujos complejos y aplicar Machine Learning mediante modelos predictivos. Gracias a mi experiencia en QA Automation y desarrollo Full Stack, diseño pipelines que no solo mueven información, sino que incluyen pruebas automatizadas para garantizar su resiliencia y una integración perfecta con el producto final.",
     "ctaViewWork": "Ver mi trabajo",
     "ctaViewCv": "Ver / descargar CV"
   },
@@ -41,7 +40,6 @@
     "projects": {
       "eyebrow": "Portfolio técnico",
       "title": "Proyectos",
-      "description": "Selección de proyectos orientados a datos, automatización, calidad y desarrollo de soluciones prácticas.",
       "highlightsLabel": "Puntos destacados",
       "stackLabel": "Herramientas utilizadas",
       "spreadAriaLabel": "Carrusel de proyectos",

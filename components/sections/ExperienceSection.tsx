@@ -16,12 +16,12 @@ export async function ExperienceSection() {
   return (
     <section
       id="experiencia"
-      className="scroll-mt-24 border-t border-zinc-800/60 md:scroll-mt-24"
+      className="scroll-mt-24 md:scroll-mt-24"
       aria-labelledby="experiencia-heading"
     >
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-24">
+      <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-28">
         <div
-          className="group/frame relative rounded-[1.25rem] border border-white/[0.08] bg-white/[0.02] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition-[border-color,background-color,box-shadow] duration-300 hover:border-[#10b981]/35 hover:bg-white/[0.035] hover:shadow-[0_0_0_1px_rgba(16,185,129,0.12),0_28px_80px_-48px_rgba(16,185,129,0.45)] sm:rounded-[1.75rem] sm:p-8 lg:p-10"
+          className="group/frame relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.035] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_24px_90px_-60px_rgba(0,0,0,0.9)] backdrop-blur-md transition-[border-color,background-color,box-shadow] duration-300 hover:border-[#10b981]/35 hover:bg-white/[0.045] hover:shadow-[0_0_0_1px_rgba(16,185,129,0.12),0_28px_80px_-48px_rgba(16,185,129,0.45)] sm:p-8 lg:p-10"
         >
           <div
             className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#10b981]/50 to-transparent opacity-70 transition-opacity duration-300 group-hover/frame:opacity-100"
@@ -44,23 +44,23 @@ export async function ExperienceSection() {
             </h2>
           </div>
 
-          <ol className="mt-12 space-y-0">
+          <ol className="mt-12 space-y-6">
             {experiences.map((experience, index) => (
               <li
                 key={experience.id}
-                className="group grid gap-6 border-t border-white/[0.08] py-8 transition-colors first:border-t-0 first:pt-0 last:pb-0 lg:grid-cols-[11rem_1fr] lg:gap-10"
+                className="group grid gap-6 lg:grid-cols-[12rem_1fr] lg:gap-10"
               >
-                <div className="lg:pt-1">
+                <div className="relative rounded-3xl border border-white/[0.07] bg-white/[0.025] p-5 lg:pt-5">
                   <p className="text-sm text-zinc-500">{experience.duration}</p>
                   <span className="mt-3 inline-flex text-[11px] font-semibold uppercase tracking-[0.16em] text-[#10b981]">
                     {experience.statusLabel?.[locale] ?? t("roleLabel")}
                   </span>
-                  <span className="mt-4 hidden text-[11px] tabular-nums text-zinc-600 lg:block">
+                  <span className="mt-6 block text-4xl font-semibold tracking-tighter text-white/[0.08]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <article className="rounded-xl border border-transparent px-0 py-0 transition-[border-color,background-color,padding] duration-300 group-hover:border-white/[0.08] group-hover:bg-white/[0.03] group-hover:px-4 group-hover:py-4 sm:group-hover:px-5">
+                <article className="rounded-3xl border border-white/[0.08] bg-zinc-950/35 p-5 transition duration-300 group-hover:-translate-y-1 group-hover:border-[#10b981]/35 group-hover:bg-white/[0.05] sm:p-6">
                   <h3 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl">
                     {experience.title}
                   </h3>
@@ -87,7 +87,7 @@ export async function ExperienceSection() {
                     {experience.stack.map((technology) => (
                       <span
                         key={`${experience.id}-${technology}`}
-                        className="border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs font-medium text-zinc-300"
+                        className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-zinc-300"
                       >
                         {technology}
                       </span>
